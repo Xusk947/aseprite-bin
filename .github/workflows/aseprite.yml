@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-2025
+    runs-on: ubuntu-latest
     steps:
 
       - name: Checkout
@@ -18,8 +18,8 @@ jobs:
 
       - name: Build
         id: build
-        shell: cmd
-        run: call build.cmd
+        shell: bash
+        run: call /build.sh
         env:
           ASEPRITE_VERSION: ${{ github.event.inputs.version }}
 
